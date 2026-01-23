@@ -23,9 +23,6 @@ Options for client:
 * ```--host <limit>``` - host (default: default)
 * ```--name <limit>``` - port (default: random_string)
 
-## Communication demo
-https://github.com/user-attachments/assets/37b0010c-6ea2-436c-96b0-f66d71bb3a7a
-
 
 
 
