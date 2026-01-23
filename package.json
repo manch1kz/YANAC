@@ -1,0 +1,36 @@
+{
+  "name": "@manch1kz/yanac",
+  "version": "1.0.0",
+  "description": "(YANAC) Yet another not another chat",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manch1kz/YANAC"
+  },
+  "main": "./build/app.js",
+  "bin": "./build/app.js",
+  "scripts": {
+    "prepack": "npm run build",
+    "build": "tsc"
+  },
+  "keywords": [
+    "cryptography",
+    "handshake",
+    "tcp",
+    "educational",
+    "cli",
+    "security"
+  ],
+  "author": "manch1kz",
+  "license": "ISC",
+  "type": "commonjs",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "commander": "^14.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.8",
+    "typescript": "^5.0.0"
+  }
+}
