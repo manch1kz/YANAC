@@ -1,21 +1,30 @@
 import { Client } from "../clientInstance";
 import { encrypt } from "../../utils/edUtils";
+import { processEnteredCommand } from "../commands/clientCommandHandler";
 
 function onLine(this: Client, line: string) {
     if (line.length > 0) {
-        process.stdout.moveCursor(0, -1)
-        process.stdout.write('\r\x1B[K');
-        console.log(`${this.name}: ${line}`)
-        if (line == "/exit") {
-            this.rl.emit("SIGINT")
+        process.stdout.moveCursor(0, -1);
+        process.stdout.write("\r\x1B[K");
+        console.log(`${this.name}: ${line}`);
+
+        if (line.startsWith("/")) {
+            processEnteredCommand.call(this, line);
+            return;
         }
-        this.server.write(encrypt(JSON.stringify({type: 'msg', body: [this.name, line]}), this.manager.session_key))
-        this.rl.prompt()
+
+        this.server.write(
+            encrypt(
+                JSON.stringify({ type: "msg", body: [this.name, line] }),
+                this.manager.session_key,
+            ),
+        );
+        this.rl.prompt();
     } else {
-        process.stdout.moveCursor(0, -1)
-        process.stdout.write('\r\x1B[K');
-        this.rl.prompt()
+        process.stdout.moveCursor(0, -1);
+        process.stdout.write("\r\x1B[K");
+        this.rl.prompt();
     }
 }
 
-export { onLine }
+export { onLine };

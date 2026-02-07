@@ -1,14 +1,14 @@
 {
-  "compilerOptions": {
-    "target": "es2022",
-    "module": "commonjs",
-    "rootDir": "./",
-    "outDir": "./build",
-    "sourceMap": false,
-    "declaration": false,
-    "declarationMap": false,
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-  },
-  "exclude": ["node_modules", "build"]
+    "compilerOptions": {
+        "target": "es2022",
+        "module": "commonjs",
+        "rootDir": "./",
+        "outDir": "./build",
+        "sourceMap": false,
+        "declaration": false,
+        "declarationMap": false,
+        "moduleResolution": "node",
+        "esModuleInterop": true
+    },
+    "exclude": ["node_modules", "build"]
 }
