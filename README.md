@@ -14,6 +14,8 @@ Starting the сlient:
 yanac start client [options]
 ```
 
+Type ```/help``` in chat to see all commands 
+
 Options for server:
 * ```--port <limit>``` - port (default: 3000)
 * ```--limit <limit>``` - chat maximum size (default: 100)
