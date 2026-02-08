@@ -18,7 +18,11 @@ function processEnteredCommand(this: Client, command: string) {
         case "ping":
             this.server.write(
                 encrypt(
-                    JSON.stringify({ type: "command", body: formated }),
+                    JSON.stringify({
+                        type: "command",
+                        body: formated,
+                        metadata: Date.now(),
+                    }),
                     this.manager.session_key,
                 ),
             );

@@ -3,11 +3,11 @@ import { encrypt } from "../../utils/edUtils";
 
 function processClientCommand(
     this: Server,
-    command: string,
+    message: any,
     socket: any,
     socket_generator: any,
 ) {
-    switch (command) {
+    switch (message.body) {
         case "online":
             socket.write(
                 encrypt(
@@ -22,7 +22,7 @@ function processClientCommand(
         case "ping":
             socket.write(
                 encrypt(
-                    JSON.stringify({ type: "ping", body: Date.now() }),
+                    JSON.stringify({ type: "ping", body: message.metadata }),
                     socket_generator.session_key,
                 ),
             );

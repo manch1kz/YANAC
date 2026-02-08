@@ -31,7 +31,7 @@ export class Server {
     add(cb: Function) {
         this.cur = this.cur.then(async () => {
             await cb();
-            await new Promise((res) => setTimeout(res, 500));
+            await new Promise((res) => setTimeout(res, 1000));
         });
     }
 }

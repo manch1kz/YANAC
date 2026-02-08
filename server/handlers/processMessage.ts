@@ -30,7 +30,7 @@ function processMessage(this: Server, socket: any, data: any) {
         case "command":
             processClientCommand.call(
                 this,
-                message.body,
+                message,
                 socket,
                 socket_generator,
             );

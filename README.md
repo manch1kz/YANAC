@@ -22,7 +22,7 @@ Options for server:
 
 Options for client:
 * ```--port <limit>``` - port (default: 3000)
-* ```--host <limit>``` - host (default: default)
+* ```--host <limit>``` - host (default: localhost)
 * ```--name <limit>``` - port (default: random_string)
 
 ## Demonstration
